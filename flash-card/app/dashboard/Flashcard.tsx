@@ -1,5 +1,14 @@
+"use client";
+import useData from "../hooks/useData";
+
 export default function Flashcard() {
-    
+    const endPoint =
+        "https://quizapi.io/api/v1/questions?apiKey=" +
+        process.env.NEXT_PUBLIC_QUIZ_API_KEY +
+        "&limit=10";
+    const { data } = useData(endPoint);
+    console.log(data);
+
     return (
         <div className="flex flex-col w-80 h-96 rounded-lg justify-center items-center [perspective:1000px]">
             <div
